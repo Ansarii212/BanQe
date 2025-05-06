@@ -1,4 +1,85 @@
-        { number: 32, difficulty: "صعب", question: "Choose the correct sentence:", options: ["If I would have known, I would have helped.", "If I had known, I would have helped.", "If I known, I would help.", "If I would know, I would help."], correct: "If I had known, I would have helped." },
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English MCQ Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .question {
+            background: #fff;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            text-align: left;
+        }
+        .difficulty {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-weight: bold;
+            color: #888;
+        }
+        .options {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .option {
+            margin: 5px 0;
+        }
+        .correct::before {
+            content: '✔️ ';
+            color: green;
+        }
+        button.copy-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>English Multiple Choice Questions</h1>
+
+<script>
+    const questions = [
+        { number: 1, difficulty: "سهل", question: "What is the past tense of 'go'?", options: ["Gone", "Went", "Goes", "Going"], correct: "Went" },
+        { number: 2, difficulty: "سهل", question: "What is the plural of 'child'?", options: ["Childs", "Children", "Childes", "Childrens"], correct: "Children" },
+        { number: 3, difficulty: "سهل", question: "Which word is an adjective?", options: ["Quickly", "Running", "Quick", "Run"], correct: "Quick" },
+        { number: 4, difficulty: "متوسط", question: "Which sentence is correct?", options: ["I can sings well.", "I can sing well.", "I can sung well.", "I can singed well."], correct: "I can sing well." },
+        { number: 5, difficulty: "متوسط", question: "What is the future form of 'be'?", options: ["Am", "Is", "Will be", "Are"], correct: "Will be" },
+        { number: 6, difficulty: "متوسط", question: "Which one is a relative pronoun?", options: ["Who", "I", "She", "What"], correct: "Who" },
+        { number: 7, difficulty: "صعب", question: "Choose the correct sentence:", options: ["She have gone to the store.", "She has gone to the store.", "She haves gone to the store.", "She having gone to the store."], correct: "She has gone to the store." },
+        { number: 8, difficulty: "صعب", question: "What is the past participle of 'eat'?", options: ["Eated", "Eating", "Ate", "Eaten"], correct: "Eaten" },
+        { number: 9, difficulty: "سهل", question: "Which word is a noun?", options: ["Beautiful", "Run", "Table", "Quickly"], correct: "Table" },
+        { number: 10, difficulty: "سهل", question: "Which sentence is in the present perfect tense?", options: ["I have eaten lunch.", "I ate lunch.", "I am eating lunch.", "I will eat lunch."], correct: "I have eaten lunch." },
+        { number: 11, difficulty: "متوسط", question: "What is the correct way to ask for permission?", options: ["Can I to go?", "Can I go?", "May I going?", "May I to go?"], correct: "Can I go?" },
+        { number: 12, difficulty: "متوسط", question: "Choose the correct sentence:", options: ["They has arrived.", "They have arrived.", "They arriving.", "They arriveds."], correct: "They have arrived." },
+        { number: 13, difficulty: "صعب", question: "What is the correct past tense of 'run'?", options: ["Ran", "Runed", "Running", "Runned"], correct: "Ran" },
+        { number: 14, difficulty: "صعب", question: "Which of the following is an example of a conditional sentence?", options: ["If it rains, we will stay inside.", "I will stay inside.", "It is raining now.", "I stayed inside."], correct: "If it rains, we will stay inside." },
+        { number: 15, difficulty: "سهل", question: "Which word is a verb?", options: ["Jump", "Jumping", "Jumped", "All of the above"], correct: "All of the above" },
+        { number: 16, difficulty: "سهل", question: "Choose the correct sentence:", options: ["She is taller than me.", "She taller than me.", "She is more taller than me.", "She is tall than me."], correct: "She is taller than me." },
+        { number: 17, difficulty: "متوسط", question: "Which of these is an adverb?", options: ["Quick", "Quickly", "Quickness", "Quicken"], correct: "Quickly" },
+        { number: 18, difficulty: "متوسط", question: "What is the comparative form of 'good'?", options: ["Gooder", "Better", "More good", "Best"], correct: "Better" },
+        { number: 19, difficulty: "صعب", question: "Choose the correct form of the verb in the sentence: 'I _______ the book when the phone rang.'", options: ["read", "reads", "was reading", "am reading"], correct: "was reading" },
+        { number: 20, difficulty: "صعب", question: "What is the indirect question of: 'Where is the nearest restaurant?'", options: ["Can you tell me where is the nearest restaurant?", "Can you tell me where the nearest restaurant is?", "Where the nearest restaurant is?", "Tell me where the nearest restaurant is."], correct: "Can you tell me where the nearest restaurant is?" },
+        { number: 21, difficulty: "سهل", question: "What is the opposite of 'tall'?", options: ["Short", "Big", "Small", "Wide"], correct: "Short" },
+        { number: 22, difficulty: "سهل", question: "Which word is an adverb?", options: ["Quick", "Slowly", "Fast", "Big"], correct: "Slowly" },
+        { number: 23, difficulty: "متوسط", question: "Choose the correct sentence:", options: ["She will calling later.", "She will call later.", "She calling later.", "She called later."], correct: "She will call later." },
+        { number: 24, difficulty: "متوسط", question: "What is the past tense of 'make'?", options: ["Made", "Making", "Maked", "Makes"], correct: "Made" },
+        { number: 25, difficulty: "صعب", question: "Which of these sentences uses the correct form of 'have to'?", options: ["She has to studying.", "She have to study.", "She has to study.", "She have to studying."], correct: "She has to study." },
+        { number: 26, difficulty: "صعب", question: "Choose the correct sentence:", options: ["If I will be rich, I will travel.", "If I was rich, I would travel.", "If I rich, I will travel.", "If I am rich, I would travel."], correct: "If I was rich, I would travel." },
+        { number: 27, difficulty: "سهل", question: "What is the opposite of 'happy'?", options: ["Sad", "Angry", "Tired", "Hungry"], correct: "Sad" },
+        { number: 28, difficulty: "سهل", question: "Which of these is a verb?", options: ["Sing", "Sung", "Sings", "All of the above"], correct: "All of the above" },
+        { number: 29, difficulty: "متوسط", question: "What is the correct answer: 'She _______ to the park every Sunday.'?", options: ["Go", "Goes", "Going", "Gone"], correct: "Goes" },
+        { number: 30, difficulty: "متوسط", question: "Which sentence is correct?", options: ["He were playing basketball.", "He played basketball.", "He is playing basketball.", "He has playing basketball."], correct: "He is playing basketball." },
+        { number: 31, difficulty: "صعب", question: "Which sentence uses the correct form of 'would'?", options: ["If he would have called, I would go.", "If he had called, I would have gone.", "If he would call, I will go.", "If he would calls, I would go."], correct: "If he had called, I would have gone." },
+         { number: 32, difficulty: "صعب", question: "Choose the correct sentence:", options: ["If I would have known, I would have helped.", "If I had known, I would have helped.", "If I known, I would help.", "If I would know, I would help."], correct: "If I had known, I would have helped." },
         { number: 33, difficulty: "سهل", question: "What is the comparative form of 'bad'?", options: ["Badder", "Worst", "Worse", "Baddest"], correct: "Worse" },
         { number: 34, difficulty: "سهل", question: "Which of these is a proper noun?", options: ["dog", "city", "London", "apple"], correct: "London" },
         { number: 35, difficulty: "متوسط", question: "What is the past form of 'go'?", options: ["Go", "Goes", "Went", "Going"], correct: "Went" },

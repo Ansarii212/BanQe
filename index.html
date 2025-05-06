@@ -1,0 +1,45 @@
+        { number: 32, difficulty: "صعب", question: "Choose the correct sentence:", options: ["If I would have known, I would have helped.", "If I had known, I would have helped.", "If I known, I would help.", "If I would know, I would help."], correct: "If I had known, I would have helped." },
+        { number: 33, difficulty: "سهل", question: "What is the comparative form of 'bad'?", options: ["Badder", "Worst", "Worse", "Baddest"], correct: "Worse" },
+        { number: 34, difficulty: "سهل", question: "Which of these is a proper noun?", options: ["dog", "city", "London", "apple"], correct: "London" },
+        { number: 35, difficulty: "متوسط", question: "What is the past form of 'go'?", options: ["Go", "Goes", "Went", "Going"], correct: "Went" },
+        { number: 36, difficulty: "متوسط", question: "Choose the correct sentence:", options: ["She is more beautiful than I am.", "She is most beautiful than I am.", "She is more beautiful as I am.", "She is beautiful more than I am."], correct: "She is more beautiful than I am." },
+        { number: 37, difficulty: "صعب", question: "Choose the correct sentence:", options: ["By the time we arrived, the train already left.", "By the time we arrive, the train had already left.", "By the time we arrived, the train had already left.", "By the time we arrived, the train leaves."], correct: "By the time we arrived, the train had already left." },
+        { number: 38, difficulty: "صعب", question: "Which sentence is in the future continuous tense?", options: ["I will be working when you arrive.", "I will work when you arrive.", "I am working when you arrive.", "I was working when you arrive."], correct: "I will be working when you arrive." },
+        { number: 39, difficulty: "سهل", question: "Which of these is a synonym of 'happy'?", options: ["Sad", "Angry", "Content", "Tired"], correct: "Content" },
+        { number: 40, difficulty: "سهل", question: "Which sentence is correct?", options: ["She don't like apples.", "She doesn't like apples.", "She not like apples.", "She don't likes apples."], correct: "She doesn't like apples." },
+        { number: 41, difficulty: "متوسط", question: "What is the correct form of 'buy' in past tense?", options: ["Bought", "Buyed", "Buying", "Buys"], correct: "Bought" },
+        { number: 42, difficulty: "متوسط", question: "Which sentence is in present continuous tense?", options: ["She is running.", "She runs.", "She ran.", "She will run."], correct: "She is running." },
+        { number: 43, difficulty: "صعب", question: "What is the correct passive form of: 'They build houses.'?", options: ["Houses are built by them.", "Houses built by them.", "Houses are being built by them.", "Houses were built by them."], correct: "Houses are built by them." },
+        { number: 44, difficulty: "صعب", question: "Which sentence contains a past perfect verb?", options: ["She had finished her homework before the meeting.", "She finished her homework before the meeting.", "She finishes her homework before the meeting.", "She will finish her homework before the meeting."], correct: "She had finished her homework before the meeting." },
+        { number: 45, difficulty: "سهل", question: "Which word is a conjunction?", options: ["And", "Run", "Apple", "Table"], correct: "And" },
+        { number: 46, difficulty: "سهل", question: "What is the opposite of 'hot'?", options: ["Cold", "Warm", "Cool", "Boiling"], correct: "Cold" },
+        { number: 47, difficulty: "متوسط", question: "Which sentence is correct?", options: ["She has been to the store.", "She been to the store.", "She has went to the store.", "She has going to the store."], correct: "She has been to the store." },
+        { number: 48, difficulty: "متوسط", question: "Choose the correct sentence:", options: ["I have never seen that movie.", "I have never saw that movie.", "I never seen that movie.", "I never saw that movie."], correct: "I have never seen that movie." },
+        { number: 49, difficulty: "صعب", question: "Which sentence is in the future perfect tense?", options: ["She will have finished her work by 5 PM.", "She finishes her work by 5 PM.", "She will finish her work by 5 PM.", "She finished her work by 5 PM."], correct: "She will have finished her work by 5 PM." },
+        { number: 50, difficulty: "صعب", question: "Choose the correct sentence:", options: ["She would of gone to the party if she knew.", "She would have gone to the party if she knew.", "She would have gone to the party if she had known.", "She would of gone to the party if she had known."], correct: "She would have gone to the party if she had known." }
+    ];
+
+    function renderQuestions() {
+        const container = document.body;
+        questions.forEach(q => {
+            const questionElem = document.createElement('div');
+            questionElem.classList.add('question');
+            questionElem.innerHTML = `
+                <div class="difficulty">${q.difficulty}</div>
+                <strong>${q.number}. ${q.question}</strong>
+                <div class="options">
+                    ${q.options.map(option => {
+                        return `<div class="option ${option === q.correct ? 'correct' : ''}">${option}</div>`;
+                    }).join('')}
+                </div>
+                <button class="copy-btn" onclick="alert('Answer: ${q.correct}')">Show Answer</button>
+            `;
+            container.appendChild(questionElem);
+        });
+    }
+
+    window.onload = renderQuestions;
+</script>
+
+</body>
+</html>
